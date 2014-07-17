@@ -1,11 +1,14 @@
 
 
-var car = require('../src/car.js'),
+var Car = require('../src/car.js'),
 	expect = require('chai').expect;
 
-describe('car', function() {
+var car = new Car('chevy', 'camaro', '1979', 'mustard');
+
+describe('Car', function() {
 
 	beforeEach(function() {
+
 		car.color = 'mustard';
 		car.currentOwner = 'chevy';
 		car.state = 'off';

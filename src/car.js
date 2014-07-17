@@ -74,9 +74,9 @@ Car.prototype.dropOff = function(name) {
 	
 };
 
-var newCar = new Car('chevy', 'camaro', '1979', 'mustard');
+// var newCar = new Car('chevy', 'camaro', '1979', 'mustard');
 
-module.exports = newCar;
+module.exports = Car;
 
 //eval(locus);
 
