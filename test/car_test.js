@@ -1,6 +1,6 @@
 
 
-var car = require('../car.js'),
+var car = require('../src/car.js'),
 	expect = require('chai').expect;
 
 describe('car', function() {
