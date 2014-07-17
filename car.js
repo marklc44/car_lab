@@ -42,34 +42,41 @@ Car.prototype.off = function() {
 
 Car.prototype.driveTo = function(destination) {
 	if(this.state === 'on') {
-		console.log("Driving to ", destination);
+		return "Driving to " + destination;
 	} else {
-		console.log("Turn the car on first!");
+		return "Turn the car on first!";
 	}
 };
 
 Car.prototype.park = function() {
 	if(this.state === 'off') {
-		console.log("Parked!")
+		return "Parked!";
 	}
 };
 
-// Phase 3
-// add passengers array
-// pickup and drop off
 Car.prototype.pickUp = function(name) {
 	if (this.state === 'on') {
 		this.passengers.push(name);
-		console.log('Picked up ', name);
+		return 'Picked up ' + name;
+	} else {
+		return 'Turn the car on first!';
 	}
 };
 
 Car.prototype.dropOff = function(name) {
-	this.passengers.splice(this.passengers.indexOf(name), 1);
+	if (this.passengers.indexOf(name) !== -1 && this.state === 'on') {
+		this.passengers.splice(this.passengers.indexOf(name), 1);
+	} else if (this.state === 'off') {
+		return "Turn the car on first!";
+	} else {
+		return name + " is not in the car!";
+	}
+	
 };
 
+var newCar = new Car('chevy', 'camaro', '1979', 'mustard');
 
-var car = new Car('bmw', 'm3', 2006, 'silver');
+module.exports = newCar;
 
-eval(locus);
+//eval(locus);
 
